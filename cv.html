@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV — Bona Fachry Adam</title>
+    <meta name="description" content="CV Bona Fachry Adam, mahasiswa Aqidah dan Filsafat Islam, UIN Sunan Kudus." />
+    <meta name="author" content="Bona Fachry Adam" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      ;(function () {
+        var d = document.documentElement
+        try {
+          var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('santro:lang')
+          if (l !== 'id' && l !== 'en') {
+            l = (navigator.language || 'id').toLowerCase().indexOf('id') === 0 ? 'id' : 'en'
+          }
+          d.lang = l
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: serif">
+        Bona Fachry Adam — bonafahry8098@gmail.com. Halaman ini membutuhkan JavaScript. This page needs JavaScript.
+      </p>
+    </noscript>
+    <script type="module" src="/src/cv-main.tsx"></script>
+  </body>
+</html>

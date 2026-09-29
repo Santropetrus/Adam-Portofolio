@@ -1,0 +1,87 @@
+.langswitch {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 115%;
+  letter-spacing: 0.08em;
+}
+
+.langswitch button {
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 6px;
+  color: var(--muted);
+  transition: color var(--t-fast) var(--ease);
+}
+
+.langswitch button + button {
+  position: relative;
+}
+
+.langswitch button + button::before {
+  content: '/';
+  position: absolute;
+  left: -3px;
+  color: var(--rule);
+  font-weight: 400;
+}
+
+.langswitch button:hover {
+  color: var(--ink);
+}
+
+.langswitch button[aria-pressed='true'] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--wall);
+}
+
+.lamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  min-width: 36px;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 115%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lamp__text {
+  display: none;
+}
+
+.lamp--label .lamp__text {
+  display: inline;
+}
+
+@media (min-width: 1100px) {
+  .lamp__text {
+    display: inline;
+  }
+}
+
+.lamp__pane {
+  fill: var(--mark);
+  transition: fill var(--t-mid) var(--ease);
+}
+
+:root[data-theme='dark'] .lamp__pane {
+  fill: transparent;
+}
+
+:root[data-theme='dark'] .lamp__pane--3 {
+  fill: var(--wall);
+}
+
+.lamp:hover .lamp__pane--2 {
+  fill: var(--wall);
+}

@@ -1,0 +1,209 @@
+.letter {
+  padding-block: clamp(64px, 10vw, 140px) clamp(48px, 8vw, 96px);
+}
+
+.letter__paper {
+  max-width: 46rem;
+  margin-left: auto;
+}
+
+@media (min-width: 900px) {
+  .letter__paper {
+    margin-right: clamp(0px, 8vw, 10rem);
+  }
+}
+
+.letter__place {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: right;
+  color: var(--muted);
+}
+
+.letter__salutation {
+  margin-top: clamp(28px, 4vw, 48px);
+  font-size: var(--fs-lead);
+  font-style: italic;
+  font-weight: 370;
+}
+
+.letter__body {
+  margin-top: 18px;
+}
+
+.letter__body p + p {
+  margin-top: 1em;
+}
+
+/* ---------- The address ---------- */
+
+.letter__mail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 20px;
+  margin-top: clamp(32px, 5vw, 56px);
+  padding-block: 18px;
+  border-block: 1px solid var(--rule-strong);
+}
+
+.letter__email {
+  font-size: clamp(1.35rem, 0.6rem + 3.6vw, 3.1rem);
+  font-weight: 340;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 0% 30%;
+  transition: background-size var(--t-mid) var(--ease);
+}
+
+.letter__email:hover,
+.letter__email:focus-visible {
+  background-size: 100% 30%;
+}
+
+.letter__copy {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--rule-strong);
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+
+.letter__copy:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* ---------- Links ---------- */
+
+.letter__links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 8px;
+}
+
+.letter__links li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.letter__social {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 0;
+  text-decoration: none;
+}
+
+.letter__social-label {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.letter__social-handle {
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
+.letter__social .arrow {
+  display: inline-block;
+  transition: transform var(--t-fast) var(--ease);
+}
+
+.letter__social:hover .arrow {
+  transform: translate(2px, -2px);
+}
+
+@media (min-width: 700px) {
+  .letter__links {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .letter__social {
+    padding: 14px 12px 14px 0;
+  }
+}
+
+.letter__time {
+  margin-top: 18px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-stretch: 100%;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Signature ---------- */
+
+.letter__sign {
+  margin-top: clamp(40px, 6vw, 72px);
+}
+
+.letter__closing {
+  font-style: italic;
+}
+
+.letter__signature {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: clamp(3.6rem, 2rem + 7vw, 8rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1600ms var(--ease-in-out);
+}
+
+.letter__signature.is-signed {
+  clip-path: inset(0 -10% 0 0);
+}
+
+.letter__fullname {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 112%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.letter__ps {
+  margin-top: clamp(32px, 5vw, 56px);
+  font-size: var(--fs-small);
+  font-style: italic;
+  color: var(--ink-2);
+}
+
+.letter__ps a {
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter__signature {
+    clip-path: none;
+  }
+}

@@ -1,0 +1,73 @@
+/*
+  Design tokens. Two atmospheres, not one palette inverted:
+  - Siang (light): warm paper and ink.
+  - Malam (dark): olive-black night under a lamp.
+  The only accent (--wall) is sampled from the classroom wall in Fig. 1.
+  Contrast of every text token was checked against WCAG AA (see DESIGN_DIRECTION.md).
+*/
+
+:root {
+  --font-serif: 'Newsreader Variable', 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Archivo Variable', 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-arabic: 'Amiri', 'Noto Naskh Arabic', 'Geeza Pro', serif;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 180ms;
+  --t-mid: 450ms;
+  --t-slow: 800ms;
+
+  --maxw: 1440px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --gap: clamp(16px, 2vw, 28px);
+  --header-h: 64px;
+
+  --fs-meta: 0.75rem;
+  --fs-small: 0.9375rem;
+  --fs-body: clamp(1.125rem, 1.03rem + 0.3vw, 1.3125rem);
+  --fs-lead: clamp(1.3rem, 1.08rem + 0.85vw, 1.85rem);
+  --fs-h3: clamp(1.35rem, 1.15rem + 0.75vw, 1.95rem);
+  --fs-h2: clamp(2.5rem, 1.7rem + 3.4vw, 5.4rem);
+  --fs-display: clamp(1.75rem, 1.05rem + 2.55vw, 3.35rem);
+
+  color-scheme: light;
+  --bg: #efebe2;
+  --bg-2: #e6e1d5;
+  --ink: #16150f;
+  --ink-2: #45423a;
+  --muted: #625e52;
+  /* Only for large text (≥ 24px): 3.1:1 on --bg. */
+  --quiet: #8a8577;
+  --rule: #cbc4b4;
+  --rule-strong: #16150f;
+  --mark: #d6e09f;
+  --wall: #8fa164;
+  --focus: #16150f;
+  --selection: #d6e09f;
+  --grain-opacity: 0.32;
+  --photo-filter: saturate(0.92) contrast(1.02);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #10130f;
+  --bg-2: #171b16;
+  --ink: #eae5d6;
+  --ink-2: #bdb8a9;
+  --muted: #949083;
+  --quiet: #6f6c62;
+  --rule: #2e342c;
+  --rule-strong: #eae5d6;
+  --mark: #3a4523;
+  --wall: #a9bc76;
+  --focus: #c9da86;
+  --selection: #3a4523;
+  --grain-opacity: 0.5;
+  --photo-filter: saturate(0.8) brightness(0.86) contrast(1.05);
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --header-h: 72px;
+  }
+}

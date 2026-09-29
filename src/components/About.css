@@ -1,0 +1,129 @@
+.about {
+  padding-block: clamp(48px, 7vw, 96px) clamp(48px, 8vw, 120px);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 64px);
+}
+
+/* ---------- Fig. 1 ---------- */
+
+.about__fig {
+  width: min(100%, 26rem);
+  justify-self: end;
+}
+
+.about__photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-size: cover;
+  background-color: var(--bg-2);
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  filter: brightness(0.32) saturate(0) contrast(1.1);
+  transform: scale(1.04);
+  transition:
+    filter 1600ms var(--ease-in-out),
+    transform 2200ms var(--ease);
+}
+
+.about__photo.is-lit img {
+  filter: var(--photo-filter);
+  transform: none;
+}
+
+.about__caption {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  margin-top: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-stretch: 96%;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+.about__fignum {
+  font-weight: 700;
+  font-stretch: 115%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+/* ---------- Prose ---------- */
+
+.prose p + p {
+  margin-top: 1.1em;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+.about__prose {
+  max-width: 36em;
+  --note-w: 15rem;
+  --note-gap: 3rem;
+}
+
+.about__first::first-line {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.03em;
+}
+
+.about__pull.about__pull {
+  margin: 1.4em 0 1em;
+  font-size: var(--fs-lead);
+  font-style: italic;
+  font-weight: 360;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+@media (min-width: 700px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    align-items: start;
+  }
+
+  .about__fig {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+    justify-self: stretch;
+  }
+}
+
+@media (min-width: 1100px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 4fr) minmax(0, 6fr) var(--note-w, 15rem);
+    column-gap: 3rem;
+  }
+
+  .about__prose {
+    grid-column: 2;
+  }
+
+  .about__pull.about__pull {
+    clear: right;
+    margin-right: calc(-1 * (15rem + 3rem));
+    font-size: clamp(1.9rem, 1.2rem + 1.6vw, 2.8rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__photo img {
+    filter: var(--photo-filter);
+    transform: none;
+  }
+}

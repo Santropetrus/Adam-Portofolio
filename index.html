@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bona Fachry Adam (Santro)</title>
+    <meta
+      name="description"
+      content="Bona Fachry Adam (Santro), mahasiswa filsafat di Kudus. Menulis tentang epistemologi dan ekologi, membangun GEMAH, membuat video pendek. A philosophy student in Kudus who turns questions into things."
+    />
+    <meta name="author" content="Bona Fachry Adam" />
+    <meta name="theme-color" content="#EFEBE2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#10130F" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bona Fachry Adam (Santro)" />
+    <meta
+      property="og:description"
+      content="Pertanyaan yang ditanggapi serius, lama-lama jadi sesuatu. Questions, taken seriously, become things."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Set theme and language before first paint, so the page never flashes.
+      ;(function () {
+        var d = document.documentElement
+        try {
+          var t = localStorage.getItem('santro:theme')
+          if (t !== 'light' && t !== 'dark') {
+            t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          }
+          d.dataset.theme = t
+          var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('santro:lang')
+          if (l !== 'id' && l !== 'en') {
+            l = (navigator.language || 'id').toLowerCase().indexOf('id') === 0 ? 'id' : 'en'
+          }
+          d.lang = l
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 2rem; font-family: serif">
+        Bona Fachry Adam (Santro) — bonafahry8098@gmail.com. Situs ini membutuhkan JavaScript. This site needs
+        JavaScript. <a href="/cv.html">CV</a>
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

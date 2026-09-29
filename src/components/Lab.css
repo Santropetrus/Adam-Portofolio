@@ -1,0 +1,214 @@
+.lab {
+  padding-block: clamp(64px, 10vw, 140px);
+  background: var(--bg-2);
+  border-block: 1px solid var(--rule);
+  transition: background-color var(--t-mid) var(--ease);
+}
+
+.lab__intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.lab__lead {
+  max-width: 30ch;
+  font-size: var(--fs-lead);
+  font-weight: 370;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.lab__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lab__counter {
+  margin-right: 10px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  font-stretch: 90%;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.lab__counter span {
+  color: var(--ink);
+}
+
+.lab__btn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--rule-strong);
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    opacity var(--t-fast) var(--ease);
+}
+
+.lab__btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.lab__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ---------- Strip ---------- */
+
+.lab__strip {
+  --edge: max(var(--gutter), calc((100vw - var(--maxw)) / 2 + var(--gutter)));
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--edge);
+  padding-inline: var(--edge);
+  padding-bottom: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--rule) transparent;
+  cursor: grab;
+}
+
+.lab__strip:focus-visible {
+  outline-offset: -4px;
+}
+
+.lab__strip.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.lab__note {
+  flex: 0 0 min(80vw, 19rem);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 22px 24px 26px;
+  border-left: 1px solid var(--rule-strong);
+  scroll-snap-align: start;
+  background: var(--bg);
+  transition: background-color var(--t-mid) var(--ease);
+}
+
+.lab__note:last-child {
+  border-right: 1px solid var(--rule-strong);
+}
+
+.lab__note + .lab__note {
+  margin-left: 0;
+}
+
+.lab__note--wide {
+  flex-basis: min(86vw, 27rem);
+}
+
+.lab__note:nth-child(even) {
+  margin-top: clamp(0px, 3vw, 40px);
+}
+
+.lab__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.lab__code {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  font-weight: 700;
+  font-stretch: 75%;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+.lab__status {
+  display: inline-block;
+  padding: 4px 8px 3px;
+  border: 1.5px solid currentColor;
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 700;
+  font-stretch: 118%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: rotate(-2.5deg);
+}
+
+.lab__status--berjalan {
+  color: var(--ink);
+}
+
+.lab__status--berganti-nama {
+  color: var(--ink-2);
+  border-style: dashed;
+}
+
+.lab__status--arsip {
+  color: var(--muted);
+}
+
+.lab__status--interaktif {
+  background: var(--mark);
+  border-color: var(--mark);
+  color: var(--ink);
+}
+
+.lab__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 1.2rem + 0.8vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.lab__body {
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.lab__aside {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-stretch: 100%;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.lab__action {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule);
+}
+
+.lab__action .lamp {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--rule-strong);
+}
+
+.lab__action .lamp:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
