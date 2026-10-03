@@ -5,6 +5,12 @@ A bilingual (Indonesian / English) personal site built around one idea:
 
 The reasoning behind every design decision is in [`DESIGN_DIRECTION.md`](./DESIGN_DIRECTION.md).
 
+<p align="center">
+  <img src="docs/tampilan.png" width="72%" alt="Homepage on desktop" />
+  &nbsp;
+  <img src="docs/tampilan-hp.png" width="22%" alt="Homepage on mobile" />
+</p>
+
 ## Run it
 
 ```bash
